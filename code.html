@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GENORA AI - Decoding the Future of Biology</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Sora:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#d4e4fa",
+                        "on-primary-fixed-variant": "#004f54",
+                        "tertiary-fixed-dim": "#b9c8da",
+                        "tertiary": "#f2f6ff",
+                        "on-surface-variant": "#b9cacb",
+                        "surface": "#051424",
+                        "on-secondary-container": "#b1bbff",
+                        "outline": "#849495",
+                        "surface-container": "#122131",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#1c2b3c",
+                        "on-surface": "#d4e4fa",
+                        "on-secondary-fixed-variant": "#002ccd",
+                        "primary": "#dbfcff",
+                        "secondary-fixed-dim": "#bbc3ff",
+                        "on-secondary": "#001d93",
+                        "primary-fixed-dim": "#00dbe9",
+                        "inverse-surface": "#d4e4fa",
+                        "on-tertiary-fixed": "#0e1d2a",
+                        "primary-fixed": "#7df4ff",
+                        "surface-container-highest": "#273647",
+                        "secondary": "#bbc3ff",
+                        "secondary-fixed": "#dee0ff",
+                        "outline-variant": "#3b494b",
+                        "primary-container": "#00f0ff",
+                        "surface-variant": "#273647",
+                        "surface-bright": "#2c3a4c",
+                        "tertiary-fixed": "#d5e4f7",
+                        "inverse-on-surface": "#233143",
+                        "background": "#051424",
+                        "on-secondary-fixed": "#000f5d",
+                        "surface-tint": "#00dbe9",
+                        "error-container": "#93000a",
+                        "tertiary-container": "#ccdbee",
+                        "on-error": "#690005",
+                        "inverse-primary": "#006970",
+                        "surface-container-lowest": "#010f1f",
+                        "on-primary": "#00363a",
+                        "on-tertiary": "#243240",
+                        "on-tertiary-fixed-variant": "#3a4857",
+                        "on-primary-container": "#006970",
+                        "on-tertiary-container": "#526070",
+                        "on-primary-fixed": "#002022",
+                        "secondary-container": "#0231de",
+                        "surface-container-low": "#0d1c2d",
+                        "surface-dim": "#051424"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit-xl": "48px",
+                        "unit-lg": "24px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "grid-columns": "12",
+                        "unit-xs": "4px",
+                        "unit-md": "16px",
+                        "unit-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["JetBrains Mono"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg": ["Sora"],
+                        "headline-md": ["Sora"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Sora"],
+                        "headline-xl": ["Sora"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(5, 20, 36, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        
+        .bioluminescent-glow:hover {
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+        }
+
+        .molecular-line {
+            background: linear-gradient(90deg, rgba(0, 240, 255, 0) 0%, rgba(0, 240, 255, 0.3) 50%, rgba(0, 240, 255, 0) 100%);
+            height: 1px;
+            width: 100%;
+        }
+
+        .pulse-ring {
+            animation: pulse 2s infinite cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0, 240, 255, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 240, 255, 0); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-md dark:bg-transparent border-b border-outline-variant/15 flex justify-between items-center px-margin-desktop py-unit-md transition-all duration-300" id="main-nav">
+<div class="flex items-center gap-unit-lg">
+<a class="text-headline-md font-headline-md tracking-tighter text-on-surface dark:text-on-surface scale-95 active:scale-90 transition-transform" href="#">
+                GENORA AI
+            </a>
+</div>
+<div class="hidden md:flex items-center gap-unit-lg">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 text-label-md font-label-md hover:bg-white/5 transition-all duration-200" href="#solutions">Solutions</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-colors text-label-md hover:bg-white/5 duration-200" href="#technology">Technology</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-colors text-label-md hover:bg-white/5 duration-200" href="#pipeline">Pipeline</a>
+</div>
+<div class="flex items-center gap-unit-md">
+<button class="hidden md:block px-unit-lg py-unit-sm border border-primary text-primary font-label-md text-label-md rounded-DEFAULT hover:bg-white/5 transition-all duration-200 bioluminescent-glow scale-95 active:scale-90">
+                Get Started
+            </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-24 pb-16 px-margin-desktop overflow-hidden">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0">
+<img alt="The Future of Biology" class="w-full h-full object-cover opacity-60 mix-blend-screen" data-alt="A highly detailed, cinematic visualization of a glowing double helix DNA strand physically connecting with a complex, translucent robotic hand, sparking with electric blue energy arcs. The scene is set in a dark, high-tech laboratory environment with out-of-focus digital screens and scientific equipment in the background. The lighting is dramatic, emphasizing the bioluminescent teal and electric blue tones against deep navy shadows, conveying a visionary, 'Deep Tech' aesthetic focused on AI and molecular engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGlnrog9pBfD3swiCG2RhCnNGxZVuDgW0_tj0Otr5Efu12zj5n-tfejhVJrVrVF4nkKBY3e85jlWSXyT2C7JYJAEoTVtWfOk0FzdyamYr3IjaNkUlURYQDxXeJQ3Dq-64sa3XMtgQFzxyQJOSL8wLQnc5_TSXRBD6ltmGvwA-b3BYrYfJZmyLjkctQorz1kzKDUNq03FBqx4LNd4DXAixWieuqJQetbTA-7ozAZJuX7Ty0TlG-QKK3ogq4p24cNGaXC88PU5WENH0"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background"></div>
+</div>
+<div class="relative z-10 max-w-4xl pt-20">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
+<span class="w-2 h-2 rounded-full bg-primary pulse-ring"></span>
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-widest">Neural Synthesis Engine Active</span>
+</div>
+<h1 class="text-headline-xl font-headline-xl text-on-background mb-6 leading-tight">
+                The Future of Biology,<br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Decoded by Intelligence</span>
+</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mb-10 leading-relaxed">
+                Genora AI combines state-of-the-art machine learning with structural biology to accelerate the discovery of novel therapeutics, designing molecules with unprecedented precision.
+            </p>
+<div class="flex flex-wrap items-center gap-4">
+<button class="px-8 py-4 bg-primary/10 border border-primary text-primary font-label-md text-label-md rounded-DEFAULT bioluminescent-glow transition-all duration-200 flex items-center gap-2">
+                    Explore Our Technology
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<button class="px-8 py-4 border border-outline-variant text-on-surface font-label-md text-label-md rounded-DEFAULT hover:bg-surface-variant transition-all duration-200 flex items-center gap-2 glass-panel">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+                    Watch the Film
+                </button>
+</div>
+</div>
+</section>
+<!-- Stats Bar -->
+<section class="relative z-20 -mt-16 px-margin-desktop mb-24">
+<div class="glass-panel rounded-lg p-8 max-w-7xl mx-auto flex flex-col md:flex-row justify-around items-center gap-8 divide-y md:divide-y-0 md:divide-x divide-outline-variant/30">
+<div class="flex flex-col items-center text-center px-8 w-full md:w-1/3">
+<span class="text-headline-lg font-headline-lg text-primary mb-2">10x</span>
+<span class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Faster Discovery</span>
+</div>
+<div class="flex flex-col items-center text-center px-8 w-full md:w-1/3 pt-6 md:pt-0">
+<span class="text-headline-lg font-headline-lg text-primary mb-2">500M+</span>
+<span class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Molecules Screened</span>
+</div>
+<div class="flex flex-col items-center text-center px-8 w-full md:w-1/3 pt-6 md:pt-0">
+<span class="text-headline-lg font-headline-lg text-primary mb-2">24</span>
+<span class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Global Partners</span>
+</div>
+</div>
+</section>
+<!-- Core Pillars -->
+<section class="py-24 px-margin-desktop max-w-7xl mx-auto" id="solutions">
+<div class="mb-16">
+<h2 class="text-headline-lg font-headline-lg text-on-background mb-4">Architecting Life's Blueprint</h2>
+<div class="w-24 h-1 bg-gradient-to-r from-primary to-transparent rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Pillar 1 -->
+<div class="glass-panel rounded-lg p-8 group hover:-translate-y-2 transition-transform duration-300">
+<div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center mb-6 text-primary group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">biotech</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-background mb-4">AI-Driven Genomics</h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+                    Understanding the blueprint of life with predictive modeling. We analyze massive genomic datasets to identify novel disease targets with high probability of clinical success.
+                </p>
+</div>
+<!-- Pillar 2 -->
+<div class="glass-panel rounded-lg p-8 group hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center mb-6 text-primary group-hover:bg-primary/20 transition-colors relative z-10">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">science</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-background mb-4 relative z-10">Molecular Engineering</h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed relative z-10">
+                    Designing the next generation of therapeutics. Our generative models create de novo proteins and small molecules optimized for binding affinity and safety profiles.
+                </p>
+</div>
+<!-- Pillar 3 -->
+<div class="glass-panel rounded-lg p-8 group hover:-translate-y-2 transition-transform duration-300">
+<div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center mb-6 text-primary group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">factory</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-background mb-4">Precision Bioprocessing</h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+                    Optimized manufacturing for complex biologics. We apply machine learning to streamline cell line development and downstream processing for scalable production.
+                </p>
+</div>
+</div>
+</section>
+<!-- Pipeline Section -->
+<section class="py-24 px-margin-desktop bg-surface-container-low relative overflow-hidden" id="pipeline">
+<div class="absolute inset-0 z-0 opacity-20" style="background-image: radial-gradient(#00f0ff 1px, transparent 1px); background-size: 40px 40px;"></div>
+<div class="max-w-7xl mx-auto relative z-10">
+<div class="text-center mb-16">
+<h2 class="text-headline-lg font-headline-lg text-on-background mb-4">Accelerated Discovery Pipeline</h2>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-2xl mx-auto">From in-silico prediction to clinical reality.</p>
+</div>
+<div class="relative">
+<!-- Connecting Line -->
+<div class="absolute top-1/2 left-0 w-full h-[1px] bg-outline-variant/30 hidden md:block -translate-y-1/2"></div>
+<div class="absolute top-1/2 left-0 w-1/3 h-[1px] bg-gradient-to-r from-primary to-transparent hidden md:block -translate-y-1/2 shadow-[0_0_10px_rgba(0,240,255,0.5)]"></div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<!-- Stage 1 -->
+<div class="relative group">
+<div class="w-6 h-6 rounded-full bg-primary border-4 border-surface shadow-[0_0_15px_rgba(0,240,255,0.6)] mx-auto mb-6 relative z-10"></div>
+<div class="glass-panel p-6 rounded-lg text-center">
+<span class="text-label-sm font-label-sm text-primary mb-2 block uppercase tracking-widest">Stage 01</span>
+<h4 class="text-body-lg font-body-lg text-on-background font-semibold">Target ID</h4>
+</div>
+</div>
+<!-- Stage 2 -->
+<div class="relative group">
+<div class="w-6 h-6 rounded-full bg-surface-variant border-4 border-surface mx-auto mb-6 relative z-10 group-hover:bg-primary/50 transition-colors"></div>
+<div class="glass-panel p-6 rounded-lg text-center opacity-70 group-hover:opacity-100 transition-opacity">
+<span class="text-label-sm font-label-sm text-on-surface-variant mb-2 block uppercase tracking-widest">Stage 02</span>
+<h4 class="text-body-lg font-body-lg text-on-background font-semibold">Lead Gen</h4>
+</div>
+</div>
+<!-- Stage 3 -->
+<div class="relative group">
+<div class="w-6 h-6 rounded-full bg-surface-variant border-4 border-surface mx-auto mb-6 relative z-10 group-hover:bg-primary/50 transition-colors"></div>
+<div class="glass-panel p-6 rounded-lg text-center opacity-70 group-hover:opacity-100 transition-opacity">
+<span class="text-label-sm font-label-sm text-on-surface-variant mb-2 block uppercase tracking-widest">Stage 03</span>
+<h4 class="text-body-lg font-body-lg text-on-background font-semibold">Optimization</h4>
+</div>
+</div>
+<!-- Stage 4 -->
+<div class="relative group">
+<div class="w-6 h-6 rounded-full bg-surface-variant border-4 border-surface mx-auto mb-6 relative z-10 group-hover:bg-primary/50 transition-colors"></div>
+<div class="glass-panel p-6 rounded-lg text-center opacity-70 group-hover:opacity-100 transition-opacity">
+<span class="text-label-sm font-label-sm text-on-surface-variant mb-2 block uppercase tracking-widest">Stage 04</span>
+<h4 class="text-body-lg font-body-lg text-on-background font-semibold">Validation</h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tech Deep Dive -->
+<section class="py-24 px-margin-desktop max-w-7xl mx-auto" id="technology">
+<div class="glass-panel rounded-xl overflow-hidden flex flex-col lg:flex-row border border-outline-variant/20">
+<div class="p-12 lg:w-1/2 flex flex-col justify-center">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-variant border border-outline-variant/30 mb-6 w-max">
+<span class="material-symbols-outlined text-[16px] text-primary">memory</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest">Proprietary Tech</span>
+</div>
+<h2 class="text-headline-lg font-headline-lg text-on-background mb-6">Neural Synthesis Engine</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mb-8 leading-relaxed">
+                    Our core architecture utilizes graph neural networks and deep reinforcement learning to navigate immense chemical spaces. It predicts molecular properties, toxicity, and synthesis routes simultaneously, collapsing years of wet-lab iteration into days of computation.
+                </p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span class="text-body-md font-body-md text-on-surface">Multi-parameter optimization</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span class="text-body-md font-body-md text-on-surface">Quantum chemistry integration</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span class="text-body-md font-body-md text-on-surface">Automated synthesis planning</span>
+</li>
+</ul>
+<button class="text-primary font-label-md text-label-md flex items-center gap-2 w-max hover:text-primary-fixed transition-colors">
+                    Read the Whitepaper
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+<div class="lg:w-1/2 bg-surface-container-high relative min-h-[400px]">
+<!-- Abstract Neural Network Visualization Placeholder -->
+<div class="absolute inset-0 flex items-center justify-center p-8">
+<img alt="Neural Network Visualization" class="w-full h-full object-cover rounded-lg opacity-50 mix-blend-screen" data-alt="An abstract, high-tech data visualization showing a glowing, intricate network of nodes and connections representing a neural network. The nodes are glowing teal and electric blue, connected by fine, luminous lines against a deep, dark navy background. The structure resembles both a complex molecule and a digital web, conveying a futuristic, computational biology aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQr43zwMM7VC8VLBhUe8_d5XZ-ZeECLunY0FdLM4mXNrMNxAf-phKFO9xg3NYpXUTvC0GZzhgbkbiW2rSjTSVDYOnf8rJEnkoxzeSBB6hsT7uUHLVVWUqYQ3qXj_yiPV8nw1XUuGl5rKBFiNeGH8St816_QiEP-G-NZfrqPr9updhQjs2MijAO5rZOb6CUPX2-9BooQAltXmXOPFqwp0dZtxoHg8YHjLleQ6soKd57Pgu9q5JPZaj7ak5uQG2WU7eDT6mIYE1ZaT0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-high via-transparent to-transparent"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-32 px-margin-desktop text-center relative overflow-hidden">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-3xl opacity-30">
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/20 via-surface/0 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-3xl mx-auto">
+<h2 class="text-headline-xl font-headline-xl text-on-background mb-8">Join the Revolution in Bio-Intelligence</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-10">
+                Partner with GENORA AI to accelerate your discovery pipeline and bring transformative therapies to market faster.
+            </p>
+<button class="px-8 py-4 bg-primary/10 border border-primary text-primary font-label-md text-label-md rounded-DEFAULT bioluminescent-glow transition-all duration-200">
+                Contact Our Team
+            </button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full py-unit-xl border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-start px-margin-desktop gap-unit-lg max-w-7xl mx-auto">
+<div class="flex flex-col gap-4">
+<span class="text-headline-sm font-headline-sm text-on-surface tracking-tighter">GENORA AI</span>
+<p class="text-body-md font-body-md text-on-surface-variant text-label-sm font-label-sm">
+                © 2024 Genora AI. Decoding the future of biology.
+            </p>
+</div>
+<div class="flex gap-8">
+<a class="text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm hover:text-primary-container transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Research</a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm hover:text-primary-container transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Careers</a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm hover:text-primary-container transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Legal</a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm hover:text-primary-container transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy</a>
+</div>
+</footer>
+<script>
+        // Simple scroll effect for nav
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-surface/80', 'shadow-lg');
+                nav.classList.remove('bg-transparent');
+            } else {
+                nav.classList.remove('bg-surface/80', 'shadow-lg');
+                nav.classList.add('bg-transparent');
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    overscroll-behavior: none;
+}
+
+.scroll-container {
+    height: 600vh; /* Sets how long the user has to scroll */
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
