@@ -83,14 +83,19 @@ window.addEventListener('scroll', () => {
 // Prevent scrolling during load
 document.body.style.overflow = 'hidden';
 
-// Wait for both a minimum of 3 seconds AND all images to finish loading
-Promise.all([
-    preloadImages(),
-    new Promise(resolve => setTimeout(resolve, 3000))
-]).then(() => {
+// Start preloading images in the background
+preloadImages();
+
+// Force loading screen to finish after exactly 3 seconds
+setTimeout(() => {
     const loadingOverlay = document.getElementById('loading-overlay');
     const loadingText = document.getElementById('loading-text');
+    const loadingProgress = document.getElementById('loading-progress');
+    
     if (loadingOverlay && loadingText) {
+        if (loadingProgress) {
+            loadingProgress.style.width = '100%'; // Force to 100% visually
+        }
         loadingText.innerText = 'System Ready';
         setTimeout(() => {
             document.body.style.overflow = '';
@@ -100,7 +105,7 @@ Promise.all([
             }, 700); // Wait for transition to complete
         }, 500);
     }
-});
+}, 2500); // 2.5s wait + 0.5s "System Ready" delay = 3 seconds total before fade
 
 // Simple scroll effect for nav
 window.addEventListener('scroll', () => {
