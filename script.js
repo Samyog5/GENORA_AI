@@ -9,10 +9,35 @@ const currentFrame = index => (
 );
 
 const preloadImages = () => {
-  for (let i = 1; i <= frameCount; i++) {
-    const img = new Image();
-    img.src = currentFrame(i);
-  }
+  return new Promise((resolve) => {
+    let imagesLoaded = 0;
+    const loadingProgress = document.getElementById('loading-progress');
+    const loadingText = document.getElementById('loading-text');
+
+    for (let i = 1; i <= frameCount; i++) {
+      const img = new Image();
+      img.fetchPriority = "high"; // High priority fetching for smooth animation
+      
+      const onImageLoadOrError = () => {
+        imagesLoaded++;
+        if (loadingProgress) {
+          const progress = (imagesLoaded / frameCount) * 100;
+          loadingProgress.style.width = `${progress}%`;
+        }
+        if (loadingText) {
+          const progress = Math.round((imagesLoaded / frameCount) * 100);
+          loadingText.innerText = `Loading Neural Synthesizer... ${progress}%`;
+        }
+        if (imagesLoaded === frameCount) {
+          resolve();
+        }
+      };
+
+      img.onload = onImageLoadOrError;
+      img.onerror = onImageLoadOrError;
+      img.src = currentFrame(i);
+    }
+  });
 };
 
 const img = new Image();
@@ -55,8 +80,27 @@ window.addEventListener('scroll', () => {
   requestAnimationFrame(() => updateImage(frameIndex));
 });
 
-// Preload the images so there is no flickering during scrolling
-preloadImages();
+// Prevent scrolling during load
+document.body.style.overflow = 'hidden';
+
+// Wait for both a minimum of 3 seconds AND all images to finish loading
+Promise.all([
+    preloadImages(),
+    new Promise(resolve => setTimeout(resolve, 3000))
+]).then(() => {
+    const loadingOverlay = document.getElementById('loading-overlay');
+    const loadingText = document.getElementById('loading-text');
+    if (loadingOverlay && loadingText) {
+        loadingText.innerText = 'System Ready';
+        setTimeout(() => {
+            document.body.style.overflow = '';
+            loadingOverlay.style.opacity = '0';
+            setTimeout(() => {
+                loadingOverlay.style.display = 'none';
+            }, 700); // Wait for transition to complete
+        }, 500);
+    }
+});
 
 // Simple scroll effect for nav
 window.addEventListener('scroll', () => {
